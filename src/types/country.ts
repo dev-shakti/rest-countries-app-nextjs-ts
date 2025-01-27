@@ -9,4 +9,5 @@ export interface Country {
     svg: string;
     png: string;
   };
+  cca2:string
 }

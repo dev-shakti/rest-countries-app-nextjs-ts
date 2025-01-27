@@ -15,7 +15,7 @@ async function fetchListofCountries():Promise<Country[]> {
 
 export default async function Home() {
   const getListOfCountries = await fetchListofCountries();
-  console.log(getListOfCountries);
+  //console.log(getListOfCountries);
 
   return (
     <div className="flex flex-col w-full min-h-screen ">

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Country } from "@/types/country";
+import Link from "next/link";
 
 interface CountryCardProps {
   country: Country;
@@ -7,9 +8,10 @@ interface CountryCardProps {
 
 export default function CountryCard({ country }: CountryCardProps) {
   return (
-    <Card
+    <Link href={`/${country.cca2}`}>
+     <Card
       key={country.name.common}
-      className="p-4 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg cursor-pointer"
+      className="p-4 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
     >
       <img
         src={country.flags.svg}
@@ -29,5 +31,7 @@ export default function CountryCard({ country }: CountryCardProps) {
         </p>
       </CardContent>
     </Card>
+    </Link>
+   
   );
 }
