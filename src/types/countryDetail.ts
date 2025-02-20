@@ -11,5 +11,5 @@ export interface CountryDetailType {
     };
     cca2:string,
     capital:string[],
-    continent:string[]
+    continents:string[]
   }

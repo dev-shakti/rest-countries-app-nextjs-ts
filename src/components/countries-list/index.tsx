@@ -60,7 +60,6 @@ export default function CountriesList({ countryList }: CountriesListProp) {
     }
   }, [searchTerm]);
 
-  console.log(searchQuery, searchTerm);
   return (
     <>
       <div className="flex items-center justify-between gap-6">
@@ -75,14 +74,14 @@ export default function CountriesList({ countryList }: CountriesListProp) {
         </div>
         <div>filter section</div>
       </div>
-      <h1 className="font-extrabold text-4xl mb-8 mt-4">List of countries</h1>
+      <h1 className="font-extrabold text-4xl my-8">List of countries</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 mg:grid-cols-3 lg:grid-cols-4 gap-6">
         {countries && countries.length > 0 ? (
           countries.map((country) => (
             <CountryCard country={country} key={country.name.common} />
           ))
         ) : (
-          <p>No countries found.</p>
+          <p className="text-xl text-red-500">No countries found.</p>
         )}
       </div>
     </>

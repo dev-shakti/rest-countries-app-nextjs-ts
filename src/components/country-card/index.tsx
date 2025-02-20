@@ -27,7 +27,7 @@ export default function CountryCard({ country }: CountryCardProps) {
           <strong>Region:</strong> {country.region}
         </p>
         <p className="text-gray-700">
-          <strong>Region:</strong> {country.population.toLocaleString()}
+          <strong>Population:</strong> {country.population.toLocaleString()}
         </p>
       </CardContent>
     </Card>
