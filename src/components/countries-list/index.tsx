@@ -4,6 +4,7 @@ import CountryCard from "../country-card";
 import { Input } from "../ui/input";
 import { useState, ChangeEvent, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { SearchIcon } from "lucide-react";
 
 interface CountriesListProp {
   countryList: Country[];
@@ -62,18 +63,17 @@ export default function CountriesList({ countryList }: CountriesListProp) {
 
   return (
     <>
-      <div className="flex items-center justify-between gap-6">
-        <div className="w-full">
-          <Input
-            type="text"
-            placeholder="Search by name..."
-            value={searchQuery}
-            onChange={handleChange}
-            className="w-full p-6"
-          />
-        </div>
-        <div>filter section</div>
+      <div className="w-full flex items-center gap-2 border border-gray-200 p-2 rounded-lg">
+        <Input
+          type="text"
+          placeholder="Search by name..."
+          value={searchQuery}
+          onChange={handleChange}
+          className="w-full p-2 border-none outline-none text-base md:text-lg text-gray-600 placeholder:text-gray-400"
+        />
+        <SearchIcon className="w-6 h-6 cursor-pointer text-gray-500 hover:text-gray-600 transition-all duration-300 ease-in-out" />
       </div>
+
       <h1 className="font-extrabold text-4xl my-8">List of countries</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 mg:grid-cols-3 lg:grid-cols-4 gap-6">
         {countries && countries.length > 0 ? (
