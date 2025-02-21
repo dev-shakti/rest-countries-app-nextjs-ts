@@ -1,5 +1,6 @@
 import CountriesList from "@/components/countries-list";
 import { Country } from "@/types/country";
+import { Suspense } from "react";
 
 async function fetchListofCountries(): Promise<Country[]> {
   try {
@@ -19,7 +20,9 @@ export default async function Home() {
     <div className="flex flex-col w-full min-h-screen ">
       {/* header section */}
       <div className="flex-1 w-full max-w-7xl mx-auto px-4 py-12 md:px-6">
-        <CountriesList countryList={getListOfCountries} />
+        <Suspense fallback={<div>Loading countries...</div>}>
+          <CountriesList countryList={getListOfCountries} />
+        </Suspense>
       </div>
     </div>
   );
